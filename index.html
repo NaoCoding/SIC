@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f8">
+  <title>SIC Studio — Assembly, made visible</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="rail" aria-label="Main navigation">
+      <div class="brand-mark" title="SIC Studio">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 6h8.4a3.6 3.6 0 0 1 0 7.2H10a3.6 3.6 0 0 0 0 7.2h9M7 6l-2 2 2 2m10 8 2 2-2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="rail-group">
+        <button class="rail-button active" aria-label="Workbench" title="Workbench"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4" width="17" height="15.5" rx="2.5" stroke="currentColor"/><path d="M7 8.5h4M7 12h2m3-3.5h5M12 12h5M7 15.5h10" stroke="currentColor" stroke-linecap="round"/></svg></button>
+        <button class="rail-button" aria-label="Programs" title="Programs"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4.5h10l4 4v11H5z" stroke="currentColor" stroke-linejoin="round"/><path d="M14.5 4.5v4h4M8 12h8M8 15.5h8" stroke="currentColor" stroke-linecap="round"/></svg></button>
+        <button class="rail-button" aria-label="Learning resources" title="Learning resources"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z" stroke="currentColor" stroke-linejoin="round"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20M8 7h8m-8 3.5h6" stroke="currentColor" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="rail-spacer"></div>
+      <div class="rail-group" style="margin-bottom:16px"><button class="rail-button" aria-label="Settings" title="Settings"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor"/><path d="m19.4 15 .1.1a1.7 1.7 0 0 1-2.4 2.4l-.1-.1a1.7 1.7 0 0 0-2.9 1.2v.2a1.7 1.7 0 0 1-3.4 0v-.2a1.7 1.7 0 0 0-2.9-1.2l-.1.1a1.7 1.7 0 0 1-2.4-2.4l.1-.1a1.7 1.7 0 0 0-1.2-2.9H4a1.7 1.7 0 0 1 0-3.4h.2a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a1.7 1.7 0 0 1 2.4-2.4l.1.1a1.7 1.7 0 0 0 2.9-1.2V2a1.7 1.7 0 0 1 3.4 0v.2a1.7 1.7 0 0 0 2.9 1.2l.1-.1a1.7 1.7 0 0 1 2.4 2.4l-.1.1a1.7 1.7 0 0 0 1.2 2.9h.2a1.7 1.7 0 0 1 0 3.4h-.2a1.7 1.7 0 0 0-1.2 2.9Z" stroke="currentColor" stroke-linejoin="round"/></svg></button></div>
+      <div class="avatar" title="SIC Student">SC</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="wordmark"><span class="wordmark-name">SIC Studio</span><span class="wordmark-divider"></span><span class="wordmark-tag">Assembly, made visible</span></div>
+        <div class="top-actions"><span class="live-pill"><i class="live-dot"></i> REAL-TIME SIMULATOR</span><span class="shortcut">STEP <kbd class="keyboard-hint">F10</kbd></span></div>
+      </header>
+
+      <div class="workspace">
+        <section class="page-head">
+          <div>
+            <div class="eyebrow"><span>Workspace</span><span class="crumb-sep">/</span><span>Untitled program</span></div>
+            <h1>See your program think.</h1>
+            <p class="subtitle">Write SIC assembly and watch every instruction move through the machine.</p>
+          </div>
+          <div class="head-actions">
+            <button class="example-button" id="sampleButton" title="Restore the example program"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4.5h10l4 4v11H5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.5 4.5v4h4M8 12h8M8 15.5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Load example</button>
+            <button class="secondary-button" id="downloadButton" title="Download source as a SIC assembly file"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 16v4h14v-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Export</button>
+          </div>
+        </section>
+
+        <section class="workspace-grid" aria-label="SIC workbench">
+          <article class="card editor-card">
+            <div class="card-head">
+              <div class="card-heading"><span class="section-icon"><svg viewBox="0 0 24 24" fill="none"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-2-13-4 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Source code</span></div>
+              <div class="head-meta"><span id="programName">EX1.asm</span><span class="language-tag">SIC</span></div>
+            </div>
+            <div class="editor-shell">
+              <div class="gutter" id="lineNumbers" aria-hidden="true"></div>
+              <div class="editor-wrap"><textarea id="sourceEditor" class="editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="SIC assembly source code"></textarea></div>
+            </div>
+            <div class="editor-footer"><div class="editor-info-left"><span class="file-dot"></span><span id="compileMessage">Ready to assemble</span></div><div class="editor-info"><span id="lineCount">0 lines</span><span>Fixed point · 24-bit</span></div></div>
+            <div class="exec-card" aria-label="Execution controls">
+              <button class="primary-button" id="runButton" title="Run or pause the program"><svg id="runIcon" viewBox="0 0 24 24" fill="none"><path d="m8 5 11 7-11 7z" fill="currentColor"/></svg><span id="runLabel">Run program</span></button>
+              <button class="secondary-button" id="stepButton" title="Execute one instruction (F10)"><svg viewBox="0 0 24 24" fill="none"><path d="m6 5 10 7-10 7z" fill="currentColor"/><path d="M19 5v14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Step</button>
+              <button class="icon-action" id="resetButton" title="Reassemble and reset machine"><svg viewBox="0 0 24 24" fill="none"><path d="M4.5 11a7.5 7.5 0 1 1 1.8 5M4 5.5V11h5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <span class="exec-divider"></span>
+              <label class="speed-control" for="speedInput"><span>Speed</span><input id="speedInput" type="range" min="1" max="8" value="4"><span class="speed-value" id="speedValue">1.0×</span></label>
+            </div>
+          </article>
+
+          <article class="card debugger" aria-label="Machine state">
+            <div class="card-head"><div class="machine-label"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="6" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M9 10h6m-6 4h6M9 2.5v3m6-3v3m-6 13v3m6-3v3M2.5 9h3m-3 6h3m13-6h3m-3 6h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Machine state</div><span class="status-pill" id="statusPill"><i class="live-dot"></i><span id="statusText">READY</span></span></div>
+            <section class="register-area">
+              <div class="subhead"><span class="subhead-title">Registers</span><span class="subhead-note">Hex · decimal values</span></div>
+              <div class="register-grid" id="registerGrid"></div>
+            </section>
+            <section class="memory-section">
+              <div class="memory-toolbar"><span class="subhead-title">Memory watch</span><span class="subhead-note" id="memoryCount">0 symbols</span><input class="memory-search" id="memorySearch" type="search" placeholder="Filter memory…" aria-label="Filter memory"></div>
+              <div class="memory-table-wrap"><table><thead><tr><th>Symbol</th><th>Address</th><th style="text-align:right">Value</th></tr></thead><tbody id="memoryRows"></tbody></table></div>
+            </section>
+            <div class="debugger-foot"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="machineNote">Machine initialized · waiting for input</span></div>
+          </article>
+        </section>
+
+        <section class="lower-grid" aria-label="Execution output">
+          <article class="card trace-card">
+            <div class="trace-head"><div class="trace-title-wrap"><span class="trace-indicator"><span></span><span></span><span></span><span></span></span><span class="card-heading">Execution trace</span></div><span class="trace-count" id="traceCount">0 steps</span></div>
+            <div class="trace-list" id="traceList"><div class="trace-empty">Press <strong>Run program</strong> or <strong>Step</strong> to begin execution.</div></div>
+          </article>
+          <article class="card output-card">
+            <div class="trace-head"><div class="card-heading">Program output</div><span class="head-meta" id="outputState">AWAITING EXECUTION</span></div>
+            <div class="output-content">
+              <div class="output-banner"><span class="output-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6m0 12h16M7.5 14l3.2-3.5 2.4 2.1L18 7.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7.5h3v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="output-copy"><div class="output-main" id="outputMain">Your results will appear here</div><div class="output-detail" id="outputDetail">Step through the program to inspect data changes.</div></div></div>
+              <div class="result-grid"><div class="result-box"><div class="result-label">Passed</div><div class="result-value pass" id="passValue">—</div></div><div class="result-box"><div class="result-label">Failed</div><div class="result-value fail" id="failValue">—</div></div></div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="notification" id="notification" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
